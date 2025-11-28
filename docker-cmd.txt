@@ -1,0 +1,3 @@
+docker build -t my-portfolio .
+
+docker run -d -p 1007:1007 my-portfolio
