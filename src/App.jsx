@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import FormfacadeEmbed from "@formfacade/embed-react";
 import { 
     Briefcase, 
     Layers, 
@@ -448,31 +449,27 @@ const Contact = () => (
                 </div>
 
                 {/* Form Side */}
-                <div className="w-full">
-                    <div className={`${THEME.bg.card} rounded-3xl border border-gray-700 overflow-hidden shadow-2xl`}>
-                        <div className="bg-slate-900 px-6 py-4 border-b border-slate-700 flex items-center gap-2">
-                            <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                            <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                            <span className="ml-4 text-sm text-slate-500 font-mono">contact_form.exe</span>
-                        </div>
-                        {/* Wrapper for responsive iframe height */}
-                        <div className="w-full bg-white">
-                          <iframe
-                          src="https://docs.google.com/forms/d/e/1FAIpQLSdGDD67qlIafPU35n5Pz0166A_WAAed7QmPrCy6DCkOIsiG0g/viewform?embedded=true"
-                          width="100%"
-                          height="620" // reduced height (adjust as needed)
-                          frameBorder="0"
-                          marginHeight="0"
-                          marginWidth="0"
-                          className="w-full bg-white block rounded-b-3xl"
-                          title="Contact Form"
-                          >
-                                Loading…
-                          </iframe>
-                        </div>
-                    </div>
-                </div>
+<div className="w-full">
+  <div className={`${THEME.bg.card} rounded-3xl border border-gray-700 overflow-hidden shadow-2xl`}>
+    
+    <div className="bg-slate-900 px-6 py-4 border-b border-slate-700 flex items-center gap-2">
+      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+      <span className="ml-4 text-sm text-slate-500 font-mono">contact_form.exe</span>
+    </div>
+
+    {/* FormFacade Embed */}
+    <div className="w-full bg-white p-0 rounded-b-3xl">
+      <FormfacadeEmbed
+        formFacadeURL="https://formfacade.com/include/101413358394568395114/form/1FAIpQLScFl96DespYDR1nkZdHnbxb459lNRCuWGNV3TZpULaEcxkBrw/classic.js/?div=ff-compose"
+        onSubmitForm={() => console.log('Form submitted')}
+      />
+    </div>
+
+  </div>
+</div>
+
             </div>
         </div>
     </section>
